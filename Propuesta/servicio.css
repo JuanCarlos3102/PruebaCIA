@@ -1,0 +1,813 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: url("images_contenedores.jpg") center/cover no-repeat fixed;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Overlay oscuro global */
+.background-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0, 15, 40, 0.85),
+        rgba(0, 25, 60, 0.9)
+    );
+    z-index: -1;
+}
+
+/* ===============================
+   HEADER
+=================================*/
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+/* Logo izquierda */
+.logo-left {
+    position: absolute;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo-item {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /
+}
+
+.logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;   /* mantiene proporción */
+}
+/* efecto sutil */
+.logo-left img:hover {
+    transform: scale(1.08);
+}
+
+/* Texto centrado */
+.logo-center {
+    font-size: 1.6rem; 
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+/* Controles derecha */
+.header-controls {
+    position: absolute;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .logo-left img {
+        height: 40px;
+    }
+}
+/* ===============================
+   RESPONSIVE HEADER
+=================================*/
+
+@media (max-width: 900px){
+
+header{
+    padding: 0 20px;
+}
+
+.logo-center{
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.logo-left{
+    left: 15px;
+}
+
+.header-controls{
+    right: 15px;
+}
+
+.logo-item{
+    width: 45px;
+    height: 45px;
+}
+
+}
+/* ===============================
+   SIDE MENU
+=================================*/
+#side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background: #001f3f;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 30px;
+    transition: 0.4s ease;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    z-index: 2000;
+}
+
+#side-menu.active {
+    right: 0;
+}
+
+#side-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+/* ===============================
+   HERO SERVICIOS
+=================================*/
+
+.services-hero {
+    padding: 180px 20px 120px;
+    text-align: center;
+    color: white;
+}
+
+.services-hero-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.services-hero h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+
+.services-line {
+    width: 90px;
+    height: 4px;
+    background: #ff2d2d;
+    margin: 10px auto 25px;
+    border-radius: 5px;
+}
+
+.services-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ===============================
+   GRID SERVICIOS
+=================================*/
+
+.services-section {
+    padding: 60px 8% 120px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjetas */
+.service-card {
+    background: rgba(255,255,255,0.05);
+    padding: 35px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+.service-card h3 {
+    font-size: 5rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* Hover elegante */
+.service-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border-color: rgba(255, 45, 45, 0.5);
+}
+
+/* ===============================
+   SERVICIOS ACORDEÓN PREMIUM
+=================================*/
+
+.service-item {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Header visible */
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 30px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-header img {
+    width: 40px;
+}
+
+.service-header h3 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+/* Hover */
+.service-header:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* Contenido oculto */
+.service-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+/* Activo */
+.service-item.active .service-content {
+    max-height: 1000px;
+}
+
+/* Bloque azul interno */
+.service-content-inner {
+    display: flex;
+    gap: 60px;
+    padding: 60px 8%;
+    background-color: #0b2f4a;
+    color: white;
+}
+
+/* Imagen izquierda */
+.service-image img {
+    width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Texto derecha */
+.service-text {
+    max-width: 600px;
+}
+
+.service-text h4 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ff2d2d;
+}
+
+.service-text p {
+    font-size: 1.15rem;   
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+    .service-content-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-image img {
+        width: 100%;
+    }
+
+    .service-text {
+        max-width: 100%;
+    }
+}
+/* ===============================
+   CONTACT RESPONSIVE
+=================================*/
+
+@media (max-width:600px){
+
+.contact-item{
+    flex-direction: column;
+    gap:8px;
+}
+
+.contact-icon{
+    font-size:18px;
+}
+
+}
+/* ===============================
+   CHATBOT
+=================================*/
+.chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #ff1e1e;
+    border: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    z-index: 5000;
+}
+
+.chatbot {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 340px;
+    height: 480px;
+    background: #002b55;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+    z-index: 5000;
+}
+
+.chatbot.active {
+    display: flex;
+}
+
+.chat-header {
+    background: #001f3f;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.chat-avatar {
+    background: #ff1e1e;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.message.bot {
+    background: #e6f2ff;
+    color: #001f3f;
+    align-self: flex-start;
+}
+
+.message.user {
+    background: #ff1e1e;
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    background: #001f3f;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.chat-footer button {
+    background: #ff1e1e;
+    border: none;
+    margin-left: 10px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
+
+/* ===============================
+   CHATBOT RESPONSIVE
+=================================*/
+
+@media (max-width:500px){
+
+.chatbot{
+    width:90%;
+    right:5%;
+    height:420px;
+}
+
+.chat-toggle{
+    width:55px;
+    height:55px;
+}
+
+}
+/* ===============================
+   CONTACTO SECCIÓN AZUL PROFESIONAL
+=================================*/
+
+.contact-section {
+    background-color:  #001f3f;
+    padding: 60px 20px 80px;
+    text-align: center;
+    color: white;
+    margin-top: 80px; 
+}
+
+/* Título centrado correctamente */
+.contact-section h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Línea roja */
+.contact-section h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background: #ff2d2d;
+    margin: 15px auto 25px;
+    border-radius: 3px;
+}
+
+/* Contenedor interno */
+.contact-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Items individuales */
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    text-align: left;
+}
+
+/* Iconos */
+.contact-icon {
+    font-size: 22px;
+    color: #ff2d2d;
+    margin-top: 4px;
+}
+
+/* Links */
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #ff2d2d;
+}
+/* ===============================
+   FOOTER
+=================================*/
+.main-footer {
+    width: 100%;
+    background: #000b1e;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.footer-content {
+    padding: 20px 10px;
+}
+
+.main-footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-content {
+    padding: 25px 10px;
+    opacity: 0.8;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+.footer-content{
+    text-align: center;
+    padding-top: 15px;
+}
+
+.partner{
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.copyright{
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* OCULTAR BARRA SUPERIOR */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+/* EVITAR QUE BAJE EL BODY */
+body {
+    top: 0px !important;
+}
+
+/* OCULTAR SELECTOR INFERIOR */
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-te-menu-frame {
+    display: none !important;
+}
+
+/* OCULTAR WIDGET DE GOOGLE */
+.goog-te-gadget {
+    display: none !important;
+}
+
+/* OCULTAR LOGO GOOGLE */
+.goog-logo-link {
+    display: none !important;
+}
+
+/* ===============================
+   PANTALLAS GRANDES
+=================================*/
+
+@media (min-width:1600px){
+
+.slide h1{
+    font-size:3.5rem;
+}
+
+.slide h2{
+    font-size:4rem;
+}
+
+.slide p{
+    font-size:1.3rem;
+}
+
+.services-section{
+    max-width:1200px;
+}
+
+.section{
+    padding:120px 20px;
+}
+
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* ===============================
+   MOBILE FIX (TELEFONOS)
+=================================*/
+
+@media (max-width:480px){
+
+/* HEADER */
+header{
+    height:70px;
+    padding:0 10px;
+}
+
+.logo-center{
+    font-size:0.9rem;
+    text-align:center;
+}
+
+.logo-left{
+    left:10px;
+    gap:8px;
+}
+
+.logo-item{
+    width:35px;
+    height:35px;
+}
+
+.header-controls{
+    right:10px;
+}
+
+/* CARRUSEL */
+
+.carousel{
+    padding:100px 15px 60px;
+}
+
+.slide h1{
+    font-size:1.4rem;
+}
+
+.slide h2{
+    font-size:1.8rem;
+}
+
+.slide p{
+    font-size:0.9rem;
+}
+
+/* BOTONES DEL CARRUSEL */
+
+.carousel-btn{
+    width:35px;
+    height:35px;
+    font-size:18px;
+}
+
+.carousel-btn.prev{
+    left:10px;
+}
+
+.carousel-btn.next{
+    right:10px;
+}
+
+/* SERVICES */
+
+.services-overlay{
+    flex-direction:column;
+}
+
+.services-section{
+    height:auto;
+}
+
+.service-item{
+    padding:25px;
+}
+
+/* ABOUT */
+
+.section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+.section h2{
+    font-size:1.6rem;
+}
+
+.section p{
+    font-size:0.95rem;
+    line-height:1.6;
+    text-align:center;
+}
+
+/* IMAGEN GRANDE */
+
+.full-image-section{
+    height:350px;
+    background-position:center;
+}
+
+/* CONTACT */
+
+.contact-container{
+    padding:0 15px;
+}
+
+.contact-item{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+/* CHATBOT */
+
+.chatbot{
+    width:90%;
+    right:5%;
+    height:420px;
+}
+
+}
+
+/* ===============================
+   HEADER MOBILE REORGANIZADO
+=================================*/
+
+@media (max-width:480px){
+
+header{
+    height:auto;
+    flex-direction:column;
+    padding:10px;
+}
+
+/* titulo arriba */
+.logo-center{
+    font-size:1rem;
+    margin-bottom:8px;
+}
+
+/* logos centrados */
+.logo-left{
+    position:relative;
+    left:auto;
+    justify-content:center;
+    margin-bottom:8px;
+}
+
+.logo-item{
+    width:40px;
+    height:40px;
+}
+
+/* traductor y menu */
+.header-controls{
+    position:relative;
+    right:auto;
+    justify-content:center;
+    gap:10px;
+}
+
+}
