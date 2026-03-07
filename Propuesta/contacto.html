@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comercio Internacional America</title>
+    <link rel="stylesheet" href="contactanos.css">
+</head>
+<body>
+<div class="background-overlay"></div>
+<!-- ===== NAVBAR ===== -->
+<header>
+
+    <!-- Logos izquierda -->
+    <div class="logo-left">
+        <div class="logo-item">
+            <img src="LogoCiamerica.png" alt="Servicio 1">
+        </div>
+
+        <div class="logo-item">
+            <img src="logoTandem.png" alt="Servicio 2">
+        </div>
+
+        <div class="logo-item">
+            <img src="logoIATA.webp" alt="Servicio 3">
+        </div>
+    </div>
+
+    <!-- Texto centrado -->
+    <div class="logo-center">
+       COMERCIO INTERNACIONAL AMERICA
+    </div>
+
+    <!-- Controles derecha -->
+    <div class="header-controls">
+        <button id="langBtn">🌍 EN</button>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+
+</header>
+
+<nav id="side-menu">
+    <a href="index.html">Inicio</a>
+    <a href="acerca.html">Acerca de Nosotros</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="contacto.html">Contacto</a>
+</nav>
+
+<section class="contact-section-pro">
+
+    <div class="contact-box">
+
+        <h2>CONTACTANOS</h2>
+        <div class="contact-line"></div>
+
+        <form class="contact-form">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Empresa</label>
+                    <input type="text" placeholder="Nombre de la empresa">
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" placeholder="Número de teléfono">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu nombre completo">
+                </div>
+
+                <div class="form-group">
+                    <label>Correo</label>
+                    <input type="email" placeholder="Tu correo electrónico">
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Ingresa tu mensaje</label>
+                <textarea rows="6" placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+
+            <button type="submit" class="contact-btn">
+                Enviar Mensaje
+            </button>
+
+        </form>
+    <div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3585.6203984746453!2d-99.0840596!3d19.4571885!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fbfdf5b2ad3d%3A0x1475077fb11053bf!2sCIAMERICA!5e1!3m2!1ses!2smx!4v1772674608094!5m2!1ses!2smx"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    </div>
+    </div>
+
+</section>
+<!-- BOTÓN PARA ABRIR CHAT -->
+<button class="chat-toggle" type="button">
+    💬
+</button>
+
+<!-- CHATBOT -->
+<div class="chatbot" id="chatbot">
+
+    <!-- HEADER -->
+    <div class="chat-header">
+        <div class="chat-avatar">C</div>
+
+        <div class="chat-info">
+            <strong>Asistente CIAMERICA</strong>
+            <div class="chat-status">Atención por WhatsApp</div>
+        </div>
+    </div>
+
+    <!-- MENSAJES -->
+    <div class="chat-body" id="chat-body">
+
+        <div class="message bot">
+            Hola 👋 <br>
+            Escríbenos tu consulta y un asesor de <strong>CIAMERICA</strong> te atenderá por WhatsApp.
+            <div class="msg-time">Ahora</div>
+        </div>
+
+    </div>
+
+    <!-- INPUT -->
+    <div class="chat-footer">
+        <input 
+            type="text" 
+            id="chat-input" 
+            placeholder="Escribe tu mensaje..."
+            autocomplete="off"
+        >
+
+        <button id="send-btn" type="button">
+            ➤
+        </button>
+    </div>
+
+</div>
+
+<!-- SONIDO MENSAJE -->
+<audio id="msg-sound">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-message-pop-alert-2354.mp3" type="audio/mpeg">
+</audio>
+<footer class="main-footer">
+    <div class="footer-line"></div>
+
+    <div class="footer-content">
+        <p class="partner">Socio Estrategico TANDEM</p><br>
+        <p class="copyright">Copyright ©2026 CIAMERICA All rights reserved</p>
+    </div>
+
+</footer>
+<div id="google_translate_element" class="google-translate"></div>
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'es',
+            includedLanguages: 'en',
+            autoDisplay: false
+        },
+        'google_translate_element'
+    );
+}
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
