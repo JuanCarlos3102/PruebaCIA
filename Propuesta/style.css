@@ -1,0 +1,756 @@
+/* ===============================
+   RESET GLOBAL
+=================================*/
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:url("images_contenedores.jpg") center/cover no-repeat fixed;
+color:white;
+overflow-x:hidden;
+top:0 !important;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+/* Overlay fondo */
+
+.background-overlay{
+position:fixed;
+inset:0;
+background:linear-gradient(
+rgba(0,15,40,0.85),
+rgba(0,25,60,0.9)
+);
+z-index:-1;
+}
+
+/* ===============================
+   HEADER
+=================================*/
+
+header{
+position:fixed;
+width:100%;
+height:75px;
+padding:0 40px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(8px);
+z-index:1000;
+}
+
+/* logos */
+
+.logo-left{
+position:absolute;
+left:40px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-item{
+width:70px;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo-item img{
+max-width:100%;
+max-height:100%;
+object-fit:contain;
+}
+
+.logo-left img:hover{
+transform:scale(1.08);
+}
+
+/* texto */
+
+.logo-center{
+font-size:1.6rem;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+/* controles */
+
+.header-controls{
+position:absolute;
+right:40px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+/* ===============================
+   SIDE MENU
+=================================*/
+
+#side-menu{
+position:fixed;
+top:0;
+right:-300px;
+width:280px;
+height:100%;
+background:#001f3f;
+display:flex;
+flex-direction:column;
+padding:80px 30px;
+transition:.4s;
+box-shadow:-10px 0 30px rgba(0,0,0,.5);
+z-index:2000;
+}
+
+#side-menu.active{
+right:0;
+}
+
+#side-menu a{
+color:white;
+text-decoration:none;
+margin:20px 0;
+font-size:1.1rem;
+}
+
+/* ===============================
+   CAROUSEL
+=================================*/
+
+.carousel{
+position:relative;
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px 80px;
+}
+
+.slides{
+position:relative;
+width:100%;
+max-width:1000px;
+}
+
+.slide{
+position:absolute;
+width:100%;
+opacity:0;
+transition:.6s;
+}
+
+.slide.active{
+position:relative;
+opacity:1;
+animation:textIn .8s ease;
+}
+
+.slide h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.slide h2{
+font-size:3.5rem;
+color:#ff1e1e;
+margin-bottom:20px;
+}
+
+.slide p{
+font-size:1.2rem;
+max-width:600px;
+margin:auto;
+}
+
+/* flechas */
+
+.carousel-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:55px;
+height:55px;
+border-radius:50%;
+font-size:28px;
+background:rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.4);
+color:white;
+cursor:pointer;
+backdrop-filter:blur(6px);
+}
+
+.carousel-btn.prev{left:30px;}
+.carousel-btn.next{right:30px;}
+
+@keyframes textIn{
+from{opacity:0;transform:translateX(100px);}
+to{opacity:1;transform:translateX(0);}
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+.slide h1{font-size:1.8rem;}
+.slide h2{font-size:2.2rem;}
+.slide p{font-size:1rem;}
+
+.carousel-btn{
+width:40px;
+height:40px;
+font-size:20px;
+}
+
+}
+
+/* ===============================
+   SERVICES
+=================================*/
+
+.services-section{
+position:relative;
+height:380px;
+max-width:1000px;
+margin:70px auto;
+border-radius:12px;
+overflow:hidden;
+}
+
+.services-bg{
+position:absolute;
+inset:0;
+background:url("ImagenPrincipal.jpg") center/cover;
+}
+
+.services-bg::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.35);
+}
+
+.services-overlay{
+position:relative;
+z-index:2;
+display:flex;
+height:100%;
+}
+
+.service-item{
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px;
+text-align:center;
+cursor:pointer;
+border-right:1px solid rgba(255,255,255,.2);
+transition:.4s;
+}
+
+.service-item:last-child{
+border-right:none;
+}
+
+.service-icon{
+width:70px;
+transition:.4s;
+}
+
+.service-content{
+opacity:0;
+transform:translateY(20px);
+transition:.5s;
+margin-top:20px;
+}
+
+.service-item:hover{
+background:rgba(255,255,255,.05);
+}
+
+.service-item:hover .service-icon{
+transform:scale(.7);
+}
+
+.service-item:hover .service-content{
+opacity:1;
+transform:translateY(0);
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+.services-overlay{
+flex-direction:column;
+}
+
+.services-section{
+height:auto;
+}
+
+.service-item{
+border-right:none;
+border-bottom:1px solid rgba(255,255,255,.2);
+padding:30px;
+}
+
+}
+
+/* ===============================
+   SECCIONES
+=================================*/
+
+.section{
+background:linear-gradient(135deg,#001a33,#002b55);
+text-align:center;
+padding:100px 20px;
+}
+
+.section h2{
+margin-bottom:20px;
+font-size:2rem;
+}
+
+.section p{
+max-width:800px;
+margin:auto;
+}
+
+/* línea roja */
+
+#about h2::after,
+#contact h2::after{
+content:"";
+display:block;
+width:80px;
+height:4px;
+background:#ff1e1e;
+margin:15px auto 0;
+border-radius:2px;
+}
+
+/* ===============================
+   ABOUT
+=================================*/
+
+.about-bar{
+width:100%;
+padding:18px 10px;
+text-align:center;
+font-size:14px;
+letter-spacing:2px;
+font-weight:600;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(8px);
+border-top:1px solid rgba(255,255,255,.2);
+}
+
+/* ===============================
+   IMAGEN FULL
+=================================*/
+
+.full-image-section{
+width:100%;
+height:700px;
+background:url("BOTE FONDO.jpg") center/cover no-repeat;
+}
+
+@media(max-width:768px){
+
+.full-image-section{
+height:40vh;
+background-position:center;
+}
+
+}
+
+/* ===============================
+   CONTACT
+=================================*/
+
+.contact-container{
+margin-top:40px;
+display:flex;
+flex-direction:column;
+gap:30px;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.contact-item{
+display:flex;
+align-items:flex-start;
+gap:15px;
+text-align:left;
+}
+
+.contact-icon{
+font-size:22px;
+color:#ff1e1e;
+margin-top:4px;
+}
+
+.contact-item a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+.contact-item a:hover{
+color:#ff1e1e;
+}
+
+/* ===============================
+   MAPA
+=================================*/
+
+.map-container{
+margin-top:50px;
+width:100%;
+height:350px;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+.map-container iframe{
+width:100%;
+height:100%;
+border:0;
+}
+
+/* ===============================
+   CHATBOT
+=================================*/
+.chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #ff1e1e;
+    border: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    z-index: 5000;
+}
+
+.chatbot {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 340px;
+    height: 480px;
+    background: #002b55;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+    z-index: 5000;
+}
+
+.chatbot.active {
+    display: flex;
+}
+
+.chat-header {
+    background: #001f3f;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.chat-avatar {
+    background: #ff1e1e;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.message.bot {
+    background: #e6f2ff;
+    color: #001f3f;
+    align-self: flex-start;
+}
+
+.message.user {
+    background: #ff1e1e;
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    background: #001f3f;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.chat-footer button {
+    background: #ff1e1e;
+    border: none;
+    margin-left: 10px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
+
+/* ===============================
+   CHATBOT RESPONSIVE
+=================================*/
+
+@media (max-width:500px){
+
+.chatbot{
+    width:90%;
+    right:5%;
+    height:420px;
+}
+
+.chat-toggle{
+    width:55px;
+    height:55px;
+}
+
+}
+
+/* ===============================
+   FOOTER
+=================================*/
+
+.main-footer{
+width:100%;
+background:#000b1e;
+text-align:center;
+font-size:14px;
+letter-spacing:1px;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+.footer-content{
+padding:25px 10px;
+opacity:.8;
+}
+
+.partner{
+font-size:14px;
+margin-bottom:6px;
+}
+
+.copyright{
+font-size:13px;
+opacity:.8;
+}
+
+/* ===============================
+   OCULTAR GOOGLE TRANSLATE
+=================================*/
+
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget,
+.goog-logo-link,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-te-menu-frame{
+display:none !important;
+}
+
+/* ===============================
+   PANTALLAS GRANDES
+=================================*/
+
+@media(min-width:1600px){
+
+.slide h1{font-size:3.5rem;}
+.slide h2{font-size:4rem;}
+.slide p{font-size:1.3rem;}
+
+.services-section{
+max-width:1200px;
+}
+
+.section{
+padding:120px 20px;
+}
+
+}
+
+/* ===============================
+   HEADER
+=================================*/
+
+header{
+position:fixed;
+width:100%;
+height:75px;
+padding:0 40px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(8px);
+z-index:1000;
+}
+
+/* logos */
+
+.logo-left{
+position:absolute;
+left:40px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-item{
+width:70px;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.logo-item img{
+max-width:100%;
+max-height:100%;
+object-fit:contain;
+}
+
+.logo-left img:hover{
+transform:scale(1.08);
+}
+
+/* texto */
+
+.logo-center{
+font-size:1.6rem;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+/* controles */
+
+.header-controls{
+position:absolute;
+right:40px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+/* ===============================
+HEADER FIX DEFINITIVO MOBILE
+=================================*/
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-wrap: wrap; 
+        align-items: center;
+        /* Esto fuerza a que los elementos se peguen a los bordes y el centro */
+        justify-content: space-between; 
+        padding: 10px 15px;
+        height: auto;
+    }
+
+/* IDIOMA */
+
+.header-controls{
+position:static !important;
+order:1;
+width:33%;
+display:flex;
+justify-content:flex-start;
+}
+
+.lang-btn{
+position:absolute;
+left:15px;
+top:12px;
+}
+
+header{
+position:relative;
+}
+
+    /* 2. LOGOS (Centro exacto) */
+    .logo-left {
+        flex: 1; /* Ocupa 1/3 del espacio */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        order: 2;
+        position: static !important;
+    }
+
+    /* 3. MENÚ (Derecha del todo) */
+.menu-toggle {
+    cursor: pointer;
+}
+
+    /* 4. TEXTO DEBAJO */
+    .logo-center {
+        width: 100%; /* Toma todo el ancho para bajar */
+        text-align: center;
+        order: 4;
+        margin-top: 15px;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    /* Ajuste de logos para que no se amontonen */
+    .logo-left img {
+        height: 26px !important; 
+        width: auto;
+        object-fit: contain;
+    }
+}
